@@ -1,0 +1,29 @@
+{
+  "name": "react-akshay-project",
+  "version": "1.0.0",
+  "description": "react sessions learning",
+  "main": "App.js",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "food app"
+  },
+  "author": "Divya Mishra",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.20.12",
+    "parcel": "^2.8.2",
+    "process": "^0.11.10"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "browserList": [
+    "last 2 versions"
+  ]
+}

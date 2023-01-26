@@ -1,0 +1,26 @@
+.header{
+    display: flex;
+    justify-content:  space-between;
+    border: 1px solid black
+}
+
+.nav-items > ul {
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+}
+.nav-items > ul > li {
+    padding: 10px;
+}
+
+.card {
+    background-color: white;
+    border: 1px solid black;
+    padding: 10px;
+    margin-top: 10px;
+    width: 10%;
+}
+
+.card > img {
+    width: 100%;
+}

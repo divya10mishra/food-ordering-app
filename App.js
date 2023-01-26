@@ -15,7 +15,7 @@
  * consistent caching algo, parcel uses
  * manages port number
  * zero config bundler
- * 
+ * tree shaking- removing unwanted code
  * 
  * --------
  * 
@@ -25,12 +25,45 @@
  * -----
  * 
  *    check browserList.dev website, it makesures we the broswer it will support, here it will support all broswer we config it in package.json
+ * 
+ * 
+ * ------
+ * 
+ * babel-transform-remove-console.log, plugin 
  */
 
 
 import React from "react";
 import ReactDom from "react-dom/client"
+import './index.css'
 
-const container = React.createElement( "h1", {id:"text"}, "heading1")
-const root = ReactDom.createRoot(document.getElementById("root"))
-root.render(container)
+const Body = () => {
+ return(
+     <>
+     <div className="card">
+         <img src = "" alt="food" />
+         <div>Burger King</div>
+         <div>4 star</div>
+     </div>
+     </>
+ )
+}
+const NavBar = () => {
+  return (  
+      <>
+  <div className="header">
+    <img src="https://pngtree.com/freepng/western-restaurant-dining-chair-illustration_4619097.html"  alt="Food villa" />
+    <div className="nav-items">
+        <ul>
+        <li>About</li>
+        <li>Home</li>
+        <li>Contact Us</li>
+        </ul>
+    </div>
+    </div>
+    <Body/>
+    </>
+    )
+} 
+ const root = ReactDom.createRoot(document.getElementById("root"))
+ root.render(<NavBar/>)
