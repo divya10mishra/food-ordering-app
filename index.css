@@ -1,7 +1,10 @@
 .header{
     display: flex;
     justify-content:  space-between;
-    border: 1px solid black
+    border: 1px solid rgb(221, 217, 217);
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
 }
 
 .nav-items > ul {
@@ -18,9 +21,23 @@
     border: 1px solid black;
     padding: 10px;
     margin-top: 10px;
-    width: 10%;
+    width: 150px;
+    margin-left: 10px;
 }
 
 .card > img {
     width: 100%;
+    margin:10px;
+}
+
+.restraunt-list{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.shimmer-card {
+    background-color: grey;
+    height: 100px;
+    width:100px;
 }
