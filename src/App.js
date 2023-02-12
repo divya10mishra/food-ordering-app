@@ -77,12 +77,14 @@ const appRouter = createBrowserRouter([
         {
             path: '/contact',
             element : <Contact/>
-        }]
-    },
-    {
-        path: '/restraunt/:id',
-        element: <RestrauntMenu/>
+        },
+        {
+            path: '/restraunt/:id',
+            element: <RestrauntMenu/>
+        }
+    ]
     }
+   
 ])
 
  const root = ReactDom.createRoot(document.getElementById("root"))

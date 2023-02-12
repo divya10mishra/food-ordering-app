@@ -4,18 +4,7 @@ import Shimmer from "./Shimmer";
 import {Link} from 'react-router-dom'
 
 const Body = () => {
-  // const RestrauntList = [{
-  //     name : "Burger King",
-  //     image : "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/zfg3qwadnsmfoearpew7",
-  //     cuisine : ["Burger", "American"],
-  //     rating : "4.2"
-  // },
-  // {
-  //     name : "KFC",
-  //     image : "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/b1b4e225722fb0501852f3ad0e0cd376",
-  //     cuisine : ["Burger", "Pizza"],
-  //     rating : "4"
-  // }]
+  
 
   const [searchInput, setSearchInput] = useState("");
   const [fillteredRestraunts, setFillteredRestraunts] = useState([]);
@@ -31,8 +20,8 @@ const Body = () => {
     );
     const data = await fetchData.json();
     console.log(data.data.cards, "data");
-    setAllRestraunts(data?.data?.cards[1]?.data?.data?.cards);
-    setFillteredRestraunts(data?.data?.cards[1]?.data?.data?.cards);
+    setAllRestraunts(data?.data?.cards[2]?.data?.data?.cards);
+    setFillteredRestraunts(data?.data?.cards[2]?.data?.data?.cards);
   }
 
   const filterData = (searchInput, restraunts) => {
@@ -50,12 +39,14 @@ const Body = () => {
       <div className="search-box">
         <input
           className="search-input"
+          style={{borderRadius:'5px', padding:'10px' , marginLeft: '10px', border:'1px solid grey'}}
           type={"text"}
           placeholder={"Enter restraunt"}
           value={searchInput}
           onChange={(e) => setSearchInput(e.target.value)}
         />
         <button
+        style={{borderRadius:'5px', padding:'10px' , marginLeft: '10px', border:'1px solid grey'}}
           onClick={() => {
             const data = filterData(searchInput, allRestraunts);
             setFillteredRestraunts(data);
@@ -65,15 +56,7 @@ const Body = () => {
           Search
         </button>
         
-        {/* <button
-          onClick={() => {
-            const data = allRestraunts
-            setAllRestraunts(data);
-          }}
-          
-        >
-          Refresh
-        </button> */}
+       
       </div>
       <div className="restraunt-list">
         {allRestraunts?.length === 0 ? (

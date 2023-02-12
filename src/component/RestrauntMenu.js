@@ -22,7 +22,7 @@ async function getRestrauntInfo() {
     const { id } = params
     console.log(params,"params")
 
-     return !restrauntInfo ? (<Shimmer />) : ( <div style={{display: 'flex'}}>
+     return (!restrauntInfo) ? (<Shimmer />) : ( <div style={{display: 'flex'}}>
   <div style={{ padding:'15px'}}>
       <h3>Restraunt Id : {id}</h3>
   <h2>{restrauntInfo.name}</h2>
@@ -33,12 +33,12 @@ async function getRestrauntInfo() {
   <div>
       <h1>Menu</h1>
       <ul>
-  {Object.values(restrauntInfo?.menu?.items).map((res)=>{
+  {Object.values(restrauntInfo?.menu?.items).map((res)=>(
    <li key={res.id}>
-       {res.name}
+        {res.name} 
     </li>
    
-  })}
+  ))} 
   </ul>
   </div>
   </div>)
