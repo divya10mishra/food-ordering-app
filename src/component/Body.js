@@ -2,6 +2,9 @@ import RestrauntCard from "./RestrauntCard";
 import React, { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
 import {Link} from 'react-router-dom'
+import {filterData} from '../utils/helper'
+import useOnline from '../utils/useOnline'
+
 
 const Body = () => {
   
@@ -14,6 +17,8 @@ const Body = () => {
     getRestrauntsData();
   }, []);
 
+  
+
   async function getRestrauntsData() {
     const fetchData = await fetch(
       "https://www.swiggy.com/dapi/restaurants/list/v5?lat=26.2144806&lng=81.25281389999999&page_type=DESKTOP_WEB_LISTING"
@@ -23,17 +28,19 @@ const Body = () => {
     setAllRestraunts(data?.data?.cards[2]?.data?.data?.cards);
     setFillteredRestraunts(data?.data?.cards[2]?.data?.data?.cards);
   }
-
-  const filterData = (searchInput, restraunts) => {
-    return restraunts.filter((res) => {
-        console.log(res,"res")
-       return res?.data?.name?.toLowerCase().includes(searchInput.toLowerCase());
-    });
-  };
+  
+  const isOnline = useOnline()
+  console.log(isOnline,"online")
+  if(!isOnline){
+      console.log("inside online")
+      return (<h1>Offline, Check your internet connection</h1>)
+  }
+ 
   //early return
 //   if (!allRestraunts?.length === 0) return null;
 //   if (fillteredRestraunts?.length === 0) return <h1>No Restraunts found</h1>;
   console.log(fillteredRestraunts, "restraunts");
+  
   return (
     <>
       <div className="search-box">
@@ -51,8 +58,7 @@ const Body = () => {
             const data = filterData(searchInput, allRestraunts);
             setFillteredRestraunts(data);
           }}
-          
-        >
+            >
           Search
         </button>
         
@@ -75,6 +81,7 @@ const Body = () => {
       </div>
     </>
   );
+ 
 };
 
 export default Body;
