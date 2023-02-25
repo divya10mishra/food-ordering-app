@@ -46,3 +46,9 @@
     height: 100px;
     width:100px;
 }
+
+.accordian-style{
+    border:2px solid grey;
+    padding: 5px;
+    margin: 3px;
+}

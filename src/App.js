@@ -38,7 +38,7 @@
  */
 
 
-import React, { lazy, Suspense } from "react";
+import React, { lazy, Suspense, useState } from "react";
 import ReactDom from "react-dom/client"
 import Footer from "./component/Footer";
 import Header from './component/Header'
@@ -51,15 +51,24 @@ import Error from './component/Error'
 import RestrauntMenu from './component/RestrauntMenu'
 import Profile from './component/ProfileClass'
 import Shimmer from "./component/Shimmer";
+import userContext from "./utils/useContext";
 
 
 const Instamart = lazy(()=> import ("./component/Instamart"))
+
 const AppLayout = () =>{
+    const [user1, setUser1] = useState({
+        name: "Sakhi",
+        email: "sakhi@gmail.com"
+    })
    return ( <>
+
+   <userContext.Provider value={{user : user1, setUser : setUser1}}>
+      { console.log(user1,"user")}
     <Header/>
     <Outlet/>
     <Footer/>
-    
+  </userContext.Provider>  
 </>)
 }
 
