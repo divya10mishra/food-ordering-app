@@ -6,7 +6,7 @@ return <>
 <div style={{fontWeight:'bold',fontSize:'24px'}}>{title}</div>
 {isVisible && <div>{description}</div>}
 {isVisible ? <button onClick={()=>{setIsVisible(false)}}>hide</button>:
-<button onClick={()=>{{setIsVisible(true)}{checkButton("show")}}}>show</button>}
+<button onClick={()=>{setIsVisible(true)}}>show</button>}
 </div>
 
 </>

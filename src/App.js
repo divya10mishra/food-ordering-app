@@ -52,9 +52,11 @@ import RestrauntMenu from './component/RestrauntMenu'
 import Profile from './component/ProfileClass'
 import Shimmer from "./component/Shimmer";
 import userContext from "./utils/useContext";
-
+import { Provider} from 'react-redux'
+import store from "./utils/store";
 
 const Instamart = lazy(()=> import ("./component/Instamart"))
+const Cart = lazy(() => import ("./component/Cart"))
 
 const AppLayout = () =>{
     const [user1, setUser1] = useState({
@@ -62,13 +64,14 @@ const AppLayout = () =>{
         email: "sakhi@gmail.com"
     })
    return ( <>
-
+<Provider store={store}>
    <userContext.Provider value={{user : user1, setUser : setUser1}}>
       { console.log(user1,"user")}
     <Header/>
     <Outlet/>
     <Footer/>
   </userContext.Provider>  
+  </Provider>
 </>)
 }
 
@@ -102,6 +105,13 @@ const appRouter = createBrowserRouter([
             element: 
             <Suspense fallback={<Shimmer />}>
             <Instamart/>
+            </Suspense>
+        },
+        {
+            path: '/cart',
+            element: 
+            <Suspense fallback={<Shimmer />}>
+            <Cart/>
             </Suspense>
         }
     ]

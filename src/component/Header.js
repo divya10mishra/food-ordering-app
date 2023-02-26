@@ -1,10 +1,15 @@
 import React, { useState } from "react";
 import { Link } from 'react-router-dom'
 import logo from '../asset/logo.png.webp'
+import {useSelector} from 'react-redux'
 
 const Header = () => {
 
     const [isLoggedIn, setIsLoggedIn] = useState(false)
+
+    //useSelector has direct access to store no imports required
+    const cartItem = useSelector((store) => store.cart.items)
+
     return (  
         <>
     <div className="header">
@@ -15,6 +20,7 @@ const Header = () => {
           <li><Link to = '/'>Home</Link></li>
           <li><Link to = '/contact'>Contact Us</Link></li>
           <li><Link to = '/instamart'>Instamart</Link></li>
+    <li><Link to = '/cart'>Cart - {cartItem.length}</Link></li>
           </ul>
       </div>
 
