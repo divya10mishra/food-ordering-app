@@ -1,32 +1,37 @@
-// const { default: Accordian } = require("./Accordian")
+
 import {useState} from "react"
 import Accordian from './Accordian'
 
 const Instamart = () => {
   const [isVisible, setIsVisible] = useState(true)
   const [visibleSection, setIsVisibleSection] = useState("")
-  console.log(isVisible,"isVisible")
-  console.log(visibleSection,"visibleSecton")
+
+
   return <>
-  <h1>Instamart </h1> 
+
+  <h1>Blogs </h1> 
   <Accordian
   title={'Health'}
-  description = {'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.'}
-  isVisible={visibleSection === "health" }
-  setIsVisible={(e)=>{ {setIsVisibleSection("health")}}}
-  // checkButton={()=>{console.log()}}
+  description = {'Health is a positive concept that emphasizes both social and personal resources as well as physical abilities." This means that health is a resource to help an individual perform their function in society, rather than an end in itself. A healthy lifestyle allows you to live a full life with meaning and purpose.'}
+  isVisible= {visibleSection === 'health'}
+  setIsVisible={setIsVisibleSection}
+  name = "health"
   />
+
    <Accordian
-  title={'DIY techniques'}
-  description = {'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.'}
+  title={'Balanced Diet'}
+  description = {'A balanced diet supplies the nutrients your body needs to work effectively. Without balanced nutrition, your body is more prone to disease, infection, fatigue, and low performance.Children who don’t get enough healthy foods may face growth and developmental problems, poor academic performance, and frequent infections.They can also develop unhealthy eating habits that may persist into adulthood.Without exercise, they’ll also have a higher risk of obesity and various diseases that make up metabolic syndrome, such as type 2 diabetes and high blood pressure.'}
   isVisible={visibleSection === "diy"}
-  setIsVisible={()=>setIsVisibleSection("diy")}
+  setIsVisible={setIsVisibleSection}
+  name = 'diy'
   />
+
    <Accordian
-  title={'Diet'}
-  description = {"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."}
+  title={'Natural vs Proccessed Carbs'}
+  description = {"When it comes to choosing the healthiest carbs for your diet, it’s important to understand the difference between natural and processed carbs. Natural carbs are whole-food sources of carbohydrates, such as fruits, vegetables, legumes, and grains that have not been processed or refined. These healthy carbs provide essential vitamins, minerals, fiber, and antioxidants that can help reduce inflammation, boost the immune system, and lower the risk of chronic diseases. On the other hand, processed carbs are usually stripped of most of their nutrients and added with sugar, salt, and/or preservatives. These types of carbs are quickly absorbed into the bloodstream and can lead to spikes in blood sugar levels. Examples of processed carbs include white bread, pastries, sugary cereals, cookies, and chips. It’s best to avoid these types of carbs if you want to stay healthy. The bottom line is that when it comes to healthy carbs, natural sources should always be prioritized over processed versions. Eating a variety of nutrient-dense whole foods is the key to nourishing your body and promoting optimal health."}
   isVisible={visibleSection === "diet"}
-  setIsVisible={()=>setIsVisibleSection("diet")}
+  setIsVisible={setIsVisibleSection}
+  name = 'diet'
  />
   </>
 }

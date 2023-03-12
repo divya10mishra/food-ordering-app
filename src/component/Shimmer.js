@@ -1,11 +1,13 @@
 const Shimmer = () => {
  return (
-   <div>
-     {Array(10)
+   <div className='shimmer-container'>
+     {/* {Array(10)
        .fill("")
-       .map((e, index) => {
-         <div key ={index} className="shimmer-card"></div>;
-       })}
+       .map((e, index) => { */}
+         <div className="shimmer-card"></div>
+
+         {Array(10).fill("").map(e=>e=<div className="shimmer-card"></div>)}
+    
    </div>
  );
 }

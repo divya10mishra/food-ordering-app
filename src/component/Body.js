@@ -24,7 +24,7 @@ const Body = () => {
       "https://www.swiggy.com/dapi/restaurants/list/v5?lat=26.2144806&lng=81.25281389999999&page_type=DESKTOP_WEB_LISTING"
     );
     const data = await fetchData.json();
-    console.log(data.data.cards, "data");
+    
     setAllRestraunts(data?.data?.cards[2]?.data?.data?.cards);
     setFillteredRestraunts(data?.data?.cards[2]?.data?.data?.cards);
   }
@@ -36,33 +36,38 @@ const Body = () => {
       return (<h1>Offline, Check your internet connection</h1>)
   }
  
-  //early return
-//   if (!allRestraunts?.length === 0) return null;
-//   if (fillteredRestraunts?.length === 0) return <h1>No Restraunts found</h1>;
-  console.log(fillteredRestraunts, "restraunts");
+
   
   return (
     <>
       <div className="search-box">
         <input
           className="search-input"
-          style={{borderRadius:'5px', padding:'10px' , marginLeft: '10px', border:'1px solid grey'}}
+          style={{
+            borderRadius: "5px",
+            padding: "10px",
+            marginLeft: "10px",
+            border: "1px solid grey",
+          }}
           type={"text"}
           placeholder={"Enter restraunt"}
           value={searchInput}
           onChange={(e) => setSearchInput(e.target.value)}
         />
         <button
-        style={{borderRadius:'5px', padding:'10px' , marginLeft: '10px', border:'1px solid grey'}}
+          style={{
+            borderRadius: "5px",
+            padding: "10px",
+            marginLeft: "10px",
+            border: "1px solid grey",
+          }}
           onClick={() => {
             const data = filterData(searchInput, allRestraunts);
             setFillteredRestraunts(data);
           }}
-            >
+        >
           Search
         </button>
-        
-       
       </div>
       <div className="restraunt-list">
         {allRestraunts?.length === 0 ? (
@@ -70,11 +75,14 @@ const Body = () => {
         ) : (
           <>
             {fillteredRestraunts?.map((restraunt, index) => {
-              return <Link 
-              to = {"/restraunt/" + restraunt.data.id}
-              key = {restraunt.data.id}>
-              <RestrauntCard {...restraunt} key={index} />
-              </Link>
+              return (
+                <Link
+                  to={"/restraunt/" + restraunt.data.id}
+                  key={restraunt.data.id}
+                >
+                  <RestrauntCard {...restraunt} key={index} />
+                </Link>
+              );
             })}
           </>
         )}

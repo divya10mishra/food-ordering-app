@@ -10,6 +10,8 @@
     border-radius: 10px;
     padding: 20px;
     margin-bottom: 20px;
+    background-color:#A0D6B4;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 
 .nav-items > ul {
@@ -23,16 +25,43 @@
 
 .card {
     background-color: white;
-    border: 1px solid black;
+    text-decoration: none;
     padding: 10px;
     margin-top: 10px;
-    width: 150px;
+    width: 200px;
     margin-left: 10px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    /* display: flex;
+    flex-direction: row; */
+}
+
+.cart-card {
+    background-color: white;
+    text-decoration: none;
+    padding: 10px;
+    margin-top: 10px;
+    width: 100%;
+    margin-left: 10px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    display: flex;
+    flex-direction:row;
+    justify-content: space-between;
+}
+.cart-card > img {
+    width: 10%;
+
+}
+.total-label{
+    border: 1px solid grey;
+    padding: 4%;
+    border-radius: 7%;
+    background-color: white;
+    font-weight: 700;
 }
 
 .card > img {
     width: 100%;
-    margin:10px;
+
 }
 
 .restraunt-list{
@@ -43,12 +72,90 @@
 
 .shimmer-card {
     background-color: grey;
-    height: 100px;
-    width:100px;
+    height: 200px;
+    width:200px;
+    margin: 10px;  
+}
+.shimmer-container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
 
 .accordian-style{
     border:2px solid grey;
     padding: 5px;
     margin: 3px;
+}
+
+.card-rating-label{
+    background-color:#A0D6B4;
+     color:black;
+     width:30% ;
+     padding:3px;
+     margin-top:10px
+}
+.remove-link-style{
+    font-size: 20px;
+    font-weight: bold;
+    font-family: math;
+    text-decoration: none;
+}
+
+.nav-item{
+    font-weight: bold;
+    font-family: math;
+    font-size: 20px;
+    color: navy;
+}
+
+.button-style{
+    border-style: none;
+    background-color:#A0D6B4 ;
+}
+
+a {
+    text-decoration: none;
+}
+.menu-label{
+    font-weight: bold;
+    font-family: math;
+    font-size: 35px;
+    color: black;
+}
+
+.menu-card{
+    display: flex;
+    flex-direction: row;
+    border: 1px solid rgb(221, 217, 217);
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    margin: 2%;
+    padding: 2%;
+}
+.menu-item-card{
+    display: flex;
+    border: 1px solid rgb(221, 217, 217);
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    margin: 2%;
+    padding: 2%;
+    justify-content: space-between;
+    font-weight: bold;
+    font-family: math;
+    font-size: 20px;
+}
+.cart-container{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgb(221, 217, 217);
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    margin: 2%;
+    padding: 2%;
+    width: 100%;
+}
+.menu-item-list{
+    display: flex;
+    flex-direction: column;
 }

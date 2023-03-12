@@ -1,22 +1,19 @@
-//import { useParams } from 'react-router-dom'
-
-
 const CartItem = (props) => {
     let imageUrl = 'https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/'
-    // const params = useParams()
-    // const { id } = params
-    // console.log(params,"params")
-    // const restrauntInfo = useRestraunt(id)
-    console.log(props,"cartitem")
+
+    let Itemtotal = () =>{
+        return ((props.quantity/100) * props.price)
+    }
+
     return (
         <>
-      <div className="card">
-         <img src = {imageUrl + props?.cloudinaryImageId} alt="food" />
-         <div>{props?.name}</div>
-        <div>{props?.description}</div>
-        <div>{props?.category}</div>
-        <span>Rupees-{props?.price/100}</span>
+      <div className="menu-item-card" style={{flexDirection:'column', background:'white'}}>
+         <div >{props?.name}</div>
+        <span style={{ fontSize: "15px", fontWeight: "500" }}>Quantity-{props?.quantity} </span>
+        <span style={{ fontSize: "15px", fontWeight: "500" }}>Rupees-{props?.price/100}</span>
+        <span style={{ fontSize: "15px", fontWeight: "500" }}>Total- {Itemtotal()}</span>
      </div>
+     
         </>
     )
 }

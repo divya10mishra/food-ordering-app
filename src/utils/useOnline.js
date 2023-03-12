@@ -17,7 +17,7 @@ useEffect(() => {
         window.removeEventListener('offline',handleOffline)
     })
 }, [])
-console.log(isOnline,"isOnline")
+
 return isOnline
 
 }

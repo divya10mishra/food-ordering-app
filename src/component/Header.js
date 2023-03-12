@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { Link } from 'react-router-dom'
-import logo from '../asset/logo.png.webp'
+import logo from '../asset/yellowlogo.png'
 import {useSelector} from 'react-redux'
+
 
 const Header = () => {
 
@@ -15,17 +16,17 @@ const Header = () => {
     <div className="header">
       <img src={logo} alt="Food villa" height='100' width='100'/>
       <div className="nav-items">
-          <ul>
-          <li><Link to = '/about'>About</Link></li>
+          <ul className='nav-item'>
           <li><Link to = '/'>Home</Link></li>
-          <li><Link to = '/contact'>Contact Us</Link></li>
-          <li><Link to = '/instamart'>Instamart</Link></li>
-    <li><Link to = '/cart'>Cart - {cartItem.length}</Link></li>
+          <li><Link to = '/about'>Contact</Link></li>
+          <li><Link to = '/contact'>About</Link></li>
+          <li><Link to = '/instamart'>Blog</Link></li>
+    <li>Cart - {cartItem.length}</li>
           </ul>
       </div>
 
      {isLoggedIn ? <button onClick={()=>setIsLoggedIn(false)}
-       style={{borderRadius:'5px', padding:'10px' , marginLeft: '10px', border:'1px solid grey'}}>
+       className="search-input">
            Logout
       </button> :
       <button  onClick={()=>setIsLoggedIn(true)}>Login</button>}

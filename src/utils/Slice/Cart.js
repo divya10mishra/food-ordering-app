@@ -1,28 +1,58 @@
 import { createSlice } from "@reduxjs/toolkit"
 
 
-const Cart = createSlice({
-    name : 'cart',
-    initialState : {
-        items:[]
-    },
-//it is covention: reducers
-    reducers : {
+function cartPayload(item){
+  return {
+    id : item.id,
+    name : item.name,
+    price : item.price,
+    quantity : 1
+  }
+}
 
-        //action is {payload:'stems'}
-        addItem: (state, action) => {
-          state.items.push(action.payload) // payload is stems
-        },
-        removeItem: (state, action) => {
-          state.items.pop(action.payload)
+const Cart = createSlice({
+  name: "cart",
+  initialState: {
+    items: [],
+
+  },
+  //it is covention: reducers
+  reducers: {
+    //action is {payload:'stems'}
+    addItem: (state, action) => {
+    
+       let cartz = cartPayload(action.payload)
+
+       let check = state.items.findIndex(el => el.id === cartz.id)
+        
+       if(check==-1){
+         state.items.push(cartz)
+       }
+       else{
+         state.items[check].quantity++
+       }
+    
+    },
+    removeItem: (state, action) => {
+      let cartz = cartPayload(action.payload)
+
+      let check = state.items.findIndex(el => el.id === cartz.id)
        
-         //state.items(action.payload)
-        },
-        clearCart: (state) => {
-          state.items=[]
+      if(check>-1){
+        if(state.items[check].quantity>0){
+          state.items[check].quantity--
         }
-    }
-})
+        else{
+          state.items.splice(0,1)
+        }
+        
+      }
+    },
+    clearCart: (state) => {
+      state.items = [];
+    },
+  },
+});
 
 export const { addItem, removeItem,clearCart } = Cart.actions
 
