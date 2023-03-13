@@ -5,7 +5,7 @@
   "description": "react sessions learning",
   "scripts": {
     "start": "parcel index.html",
-    "predeploy":"npm run build",
+    "predeploy":"npm run dist",
     "deploy":"gh-pages -d dist",
     "build": "parcel build index.html",
     "test": "jest"

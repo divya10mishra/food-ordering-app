@@ -62,14 +62,15 @@ const AppLayout = () => {
     name: "Sakhi",
     email: "sakhi@gmail.com",
   });
-  return <Provider store={store}>
+  return (
+  <Provider store={store}>
     <userContext.Provider value={{ user: user1, setUser: setUser1 }}>
-      {console.log(user1, "user")}
       <Header />
       <Outlet />
       <Footer />
     </userContext.Provider>
   </Provider>
+  )
 };
 
 const appRouter = createBrowserRouter([
