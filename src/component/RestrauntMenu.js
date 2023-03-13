@@ -14,11 +14,11 @@ const RestrauntMenu = () => {
   const restrauntInfo = useRestraunt(id);
   const dispatch = useDispatch();
 
-  handleAddItem = (item) => {
+  const handleAddItem = (item) => {
     dispatch(addItem(item)); // action is {payload:'stems'}
   };
 
-  handleRemoveItem = (item) => {
+  const handleRemoveItem = (item) => {
     dispatch(removeItem(item));
   };
         <img src={imageUrl + restrauntInfo?.cloudinaryImageId} />
