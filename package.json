@@ -6,8 +6,8 @@
   "scripts": {
     "start": "parcel index.html",
     "predeploy":"npm run build",
-    "deploy":"gh-pages -d build",
-    "build": "parcel build index.html",
+    "deploy":"gh-pages -d dist",
+    "build": "parcel build index.html --public-url .",
     "test": "jest"
   },
   "repository": {
