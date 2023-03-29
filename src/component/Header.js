@@ -25,11 +25,11 @@ const Header = () => {
           </ul>
       </div>
 
-     {isLoggedIn ? <button onClick={()=>setIsLoggedIn(false)}
+     {/* {isLoggedIn ? <button onClick={()=>setIsLoggedIn(false)}
        className="search-input">
            Logout
       </button> :
-      <button  onClick={()=>setIsLoggedIn(true)}>Login</button>}
+      <button  onClick={()=>setIsLoggedIn(true)}>Login</button>} */}
       </div>
      
      

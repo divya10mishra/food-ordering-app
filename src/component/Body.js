@@ -30,9 +30,9 @@ const Body = () => {
   }
   
   const isOnline = useOnline()
-  console.log(isOnline,"online")
+ // console.log(isOnline,"online")
   if(!isOnline){
-      console.log("inside online")
+     // console.log("inside online")
       return (<h1>Offline, Check your internet connection</h1>)
   }
  

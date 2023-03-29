@@ -5,7 +5,7 @@ const RestrauntCard = (props) => {
   let imageUrl =
     "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/";
   const { user, setUser } = useContext(userContext);
-  console.log(props, "cards inside");
+  //console.log(props, "cards inside");
   return (
     <>
       <div className="card">

@@ -11,7 +11,7 @@ export default class Profile extends React.Component {
       this.state = {
           count : 0
       }
-      console.log("constructor")
+     // console.log("constructor")
     }
 
     openLinkdn = () => {

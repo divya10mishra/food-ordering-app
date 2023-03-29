@@ -2,7 +2,7 @@ import uparrow from '../asset/up-arrow.png'
 import downarrow from '../asset/down-arrow.png'
 
 const Accordian = ({ description, title, isVisible, setIsVisible, name }) => {
- console.log(isVisible, "accordianisVisible");
+ //console.log(isVisible, "accordianisVisible");
   return (
     <>
       <div className="menu-item-card">
@@ -13,7 +13,7 @@ const Accordian = ({ description, title, isVisible, setIsVisible, name }) => {
         <button
           onClick={(e) => {
             setIsVisible(e.target.name);
-            console.log(e,"clickk")
+            //console.log(e,"clickk")
           }}
           name={isVisible ? "" : name}
           style={{
