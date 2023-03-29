@@ -1,8 +1,8 @@
 
 import { useState, useEffect } from 'react'
+import {DummyData} from "./DummyData";
 
 const useRestraunt = (id) =>{
-
     const [restrauntInfo, setRestrauntInfo] = useState(null)
     useEffect(()=>{
         getRestrauntInfo()
@@ -11,9 +11,10 @@ const useRestraunt = (id) =>{
    async function getRestrauntInfo() {
        const fetchData = await fetch("https://www.swiggy.com/dapi/menu/v4/full?lat=26.2144806&lng=81.25281389999999&menuId=" + id);
        const data = await fetchData.json()
-       console.log(data.data.name,"info")
-       const restraunt = data?.data
-       setRestrauntInfo(restraunt)
+
+    //    console.log(data.data.name,"info")
+    //    const restraunt = data?.data
+       setRestrauntInfo(DummyData?.data)
    }
    return restrauntInfo
 }
