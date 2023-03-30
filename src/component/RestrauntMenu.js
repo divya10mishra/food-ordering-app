@@ -4,6 +4,7 @@ import { useDispatch } from "react-redux";
 import useRestraunt from "../utils/useRestraunt";
 import Shimmer from "./Shimmer";
 import Cart from "./Cart";
+import {Link} from 'react-router-dom'
 
 const RestrauntMenu = () => {
   let imageUrl =
@@ -27,13 +28,13 @@ const RestrauntMenu = () => {
     <Shimmer />
   ) : (
     <>
-      <div className="menu-card">
+      <div style={{display:'flex' }} className="menu-header">
         <img src={imageUrl + restrauntInfo?.cloudinaryImageId} />
         <div
-          style={{ display: "flex", flexDirection: "column", marginLeft: "3%" }}
+          style={{ display: "flex", flexDirection: "column", marginLeft: "3%"}}
         >
           <span className="menu-label">
-            {restrauntInfo?.name}({id})
+            {restrauntInfo?.name}
           </span>
           <span className="menu-label">
             Ratings : {restrauntInfo?.avgRating}
@@ -41,15 +42,18 @@ const RestrauntMenu = () => {
           <span className="menu-label">
             Address: {restrauntInfo?.area},{restrauntInfo?.city}
           </span>
-         
+       
        
         </div>
+        <div style={{marginLeft:'15%', fontSize:'25px'}}>
+        <Link to = '/'> ⬅️Back to Home </Link>
+        </div>
       </div>
-      <div style={{ display: "flex", justifyContent:'space-between', marginRight:'25%' }}>
+      <div className='menu-page'>
         <div>
           <ul>
             {Object.values(restrauntInfo?.menu?.items).map((res) => (
-              <div className="menu-item-card" key={res.id} style={{width:'100%'}}>
+              <div className="menu-item-card" key={res.id}>
                
                 <span className="menu-item-list">
                   <span>{res.name} </span>
@@ -61,15 +65,15 @@ const RestrauntMenu = () => {
                   </span>
                 </span>
 
-                <div className="menu-item-card">
+                <div >
                   <button
-                    className="button-style"
+                 
                     onClick={() => handleAddItem(res)}
                   >
                     +
                   </button>
                   <button
-                    className="button-style"
+                   
                     style={{ marginLeft: "10px" }}
                     onClick={() => handleRemoveItem(res)}
                   >

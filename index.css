@@ -109,10 +109,6 @@
     color: navy;
 }
 
-.button-style{
-    border-style: none;
-    background-color:#A0D6B4 ;
-}
 
 a {
     text-decoration: none;
@@ -137,10 +133,11 @@ a {
     display: flex;
     border: 1px solid rgb(221, 217, 217);
     border-radius: 5px;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 5px;
     margin: 2%;
     padding: 2%;
-    justify-content: space-between;
+    width:500px;
+    justify-content: space-between; 
     font-weight: bold;
     font-family: math;
     font-size: 20px;
@@ -159,3 +156,38 @@ a {
     display: flex;
     flex-direction: column;
 }
+.cart-style{
+    display: flex;
+    justify-content:  space-between;
+    border: 1px solid rgb(221, 217, 217);
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 25px;
+    /* background-color:#A0D6B4; */
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+.menu-header{
+    display: flex;
+}
+@media screen and (min-width: 1290px) {
+    .menu-page {
+      display: flex;
+      justify-content: space-between;
+      margin-right:5%
+    }
+  
+  }
+  @media screen and (max-width: 1290px) {
+    .menu-page {  
+      margin:5%
+    }
+    .cart-style{
+        margin-left: 15%;
+        margin-top: 5%;
+    }
+    .menu-header{
+        display: flex;
+        flex-direction: column;
+        margin-left: 15%;
+    }
+  }

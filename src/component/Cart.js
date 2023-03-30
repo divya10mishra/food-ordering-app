@@ -17,7 +17,7 @@ const Cart = () => {
 
   return (
       <>
-    {  cartItem?.length > 0 && <div className='header' style={{flexDirection:'column', width:'100%'}}>
+    {  cartItem?.length > 0 && <div className='cart-style' style={{flexDirection:'column'}}>
        <h2>Cart</h2>
 
       <span>

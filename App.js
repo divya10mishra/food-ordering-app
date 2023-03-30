@@ -39,23 +39,23 @@
 
 import React, { lazy, Suspense, useState } from "react";
 import ReactDom from "react-dom/client";
-import Footer from "./component/Footer";
-import Header from "./component/Header";
-import Body from "./component/Body";
-import "../index.css";
+import Footer from "./src/component/Footer";
+import Header from "./src/component/Header";
+import Body from "./src/component/Body";
+import "/index.css";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
-import About from "./component/About";
-import Contact from "./component/Contact";
-import Error from "./component/Error";
-import RestrauntMenu from "./component/RestrauntMenu";
-import Profile from "./component/ProfileClass";
-import Shimmer from "./component/Shimmer";
-import userContext from "./utils/useContext";
+import About from "./src/component/About";
+import Contact from "./src/component/Contact";
+import Error from "./src/component/Error";
+import RestrauntMenu from "./src/component/RestrauntMenu";
+import Profile from "./src/component/ProfileClass";
+import Shimmer from "./src/component/Shimmer";
+import userContext from "./src/utils/useContext";
 import { Provider } from "react-redux";
-import store from "./utils/store";
+import store from "./src/utils/store";
 
-const Instamart = lazy(() => import("./component/Instamart"));
-const Cart = lazy(() => import("./component/Cart"));
+const Instamart = lazy(() => import("./src/component/Instamart"));
+const Cart = lazy(() => import("./src/component/Cart"));
 
 const AppLayout = () => {
   const [user1, setUser1] = useState({
@@ -65,7 +65,7 @@ const AppLayout = () => {
   return (
   <Provider store={store}>
     <userContext.Provider value={{ user: user1, setUser: setUser1 }}>
-      <Header />
+      
       <Outlet />
       <Footer />
     </userContext.Provider>

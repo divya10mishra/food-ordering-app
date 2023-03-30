@@ -4,7 +4,7 @@ import Shimmer from "./Shimmer";
 import {Link} from 'react-router-dom'
 import {filterData} from '../utils/helper'
 import useOnline from '../utils/useOnline'
-
+import Header from '../component/Header'
 
 const Body = () => {
   
@@ -40,6 +40,7 @@ const Body = () => {
   
   return (
     <>
+    <Header />
       <div className="search-box">
         <input
           className="search-input"
@@ -70,18 +71,23 @@ const Body = () => {
         </button>
       </div>
       <div className="restraunt-list">
-        {allRestraunts?.length === 0 ? (
-          <Shimmer />
-        ) : (
+        {allRestraunts?.length === 0 ? (<>
+           <Shimmer />
+        
+       </> ) : (
           <>
+          
             {fillteredRestraunts?.map((restraunt, index) => {
               return (
+                
+                
                 <Link
                   to={"/restraunt/" + restraunt.data.id}
                   key={restraunt.data.id}
                 >
                   <RestrauntCard {...restraunt} key={index} />
                 </Link>
+               
               );
             })}
           </>

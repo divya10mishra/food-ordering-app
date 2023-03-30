@@ -7,11 +7,11 @@ const CartItem = (props) => {
 
     return (
         <>
-      <div className="menu-item-card" style={{flexDirection:'column', background:'white'}}>
-         <div >{props?.name}</div>
-        <span style={{ fontSize: "15px", fontWeight: "500" }}>Quantity-{props?.quantity} </span>
-        <span style={{ fontSize: "15px", fontWeight: "500" }}>Rupees-{props?.price/100}</span>
-        <span style={{ fontSize: "15px", fontWeight: "500" }}>Total- {Itemtotal()}</span>
+      <div  style={{flexDirection:'column', background:'white', borderBottom:'2px solid gray'}}>
+         <div style={{ fontSize: "20px", fontWeight: "900" }}>{props?.name}</div>
+        <span style={{ fontSize: "18px", fontWeight: "500" }}>Quantity-{props?.quantity} </span>
+        <span style={{ fontSize: "18px", fontWeight: "500" }}>Rupees-{props?.price/100}</span>
+        <span style={{ fontSize: "18px", fontWeight: "500" }}>Total- {Itemtotal()}</span>
      </div>
      
         </>
