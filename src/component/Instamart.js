@@ -1,6 +1,7 @@
 
 import {useState} from "react"
 import Accordian from './Accordian'
+import {Link} from 'react-router-dom'
 
 const Instamart = () => {
   const [isVisible, setIsVisible] = useState(true)
@@ -9,7 +10,12 @@ const Instamart = () => {
 
   return <>
 
-  <h1>Blogs </h1> 
+<div style={{display:'flex', justifyContent:'space-between'}}>
+      <div className='menu-label' style={{marginTop:'5%', marginLeft:'5%'}}>Blog</div>
+      <div style={{ fontSize:'25px'}}>
+        <Link to = '/'> ⬅️Back to Home </Link>
+        </div>
+        </div> 
   <Accordian
   title={'Health'}
   description = {'Health is a positive concept that emphasizes both social and personal resources as well as physical abilities." This means that health is a resource to help an individual perform their function in society, rather than an end in itself. A healthy lifestyle allows you to live a full life with meaning and purpose.'}
