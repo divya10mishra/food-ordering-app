@@ -23,7 +23,7 @@ const Header = () => {
             {/* <li><Link to = '/about'>Contact</Link></li>
           <li><Link to = '/contact'>About</Link></li>*/}
             {/* <li><Link to = '/instamart'>Blog</Link></li>  */}
-            <Link to='/cart'><li>Cart item - {cartItem.length}</li></Link>
+            <li> <Link to='/cart'>Cart item - {cartItem.length}</Link></li>
           </ul>
         </div>
 
