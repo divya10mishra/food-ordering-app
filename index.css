@@ -8,19 +8,32 @@
     justify-content:  space-between;
     border: 1px solid rgb(221, 217, 217);
     border-radius: 10px;
-    padding: 20px;
-    margin-bottom: 25px;
-    /* background-color:#A0D6B4; */
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    padding: 7px;
+    margin-bottom: 25px;   
+    opacity: 0.8;
+    position: sticky;
+    top:0;
+    background-color:white;
+  
+    /* box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px; */
+}
+/* .bg-image{
+    background-image: url('https://w0.peakpx.com/wallpaper/760/93/HD-wallpaper-food-still-life-meat-mushroom-spices.jpg');
+} */
+
+body{
+    font-family: "Gill Sans", sans-serif;
 }
 
 .nav-items > ul {
     list-style-type: none;
     display: flex;
     flex-direction: row;
+    color: #708090
 }
 .nav-items > ul > li {
     padding: 10px;
+   
 }
 
 .card {
@@ -30,7 +43,10 @@
     margin-top: 10px;
     width: 200px;
     margin-left: 10px;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    height:250px;
+    border: 1px solid #ddd9d9;
+    border-radius: 5px 
+    /* box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; */
     /* display: flex;
     flex-direction: row; */
 }
@@ -52,10 +68,10 @@
 
 }
 .total-label{
-    border: 1px solid grey;
-    padding: 4%;
-    border-radius: 7%;
-    background-color: white;
+    background-color: #fff;
+    border: 1px solid gray;
+    border-radius: 5%;
+    padding: 2%;
     font-weight: 700;
 }
 
@@ -68,6 +84,7 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    margin-bottom: 15%;
 }
 
 .shimmer-card {
@@ -89,11 +106,22 @@
 }
 
 .card-rating-label{
-    background-color:#A0D6B4;
-     color:black;
-     width:30% ;
-     padding:3px;
-     margin-top:10px
+    color: white;
+    width: 30%;
+    background-color: #48c479;
+    border-radius: 5%;
+    margin-top: 10px;
+    padding: 3px;
+}
+.menu-rating-label{
+    color: #fff;
+    
+    color: #48c479;
+    border-radius: 5%;
+    /* margin-top: 10px; */
+    padding: 0.7%;
+    height: 1%;
+    border: 1px solid gray;
 }
 .remove-link-style{
     font-size: 20px;
@@ -106,17 +134,21 @@
     font-weight: bold;
     font-family: math;
     font-size: 20px;
-    color: navy;
+    
 }
 
 
 a {
     text-decoration: none;
+    color: #708090
+}
+a:hover{
+  color: orange
 }
 .menu-label{
     font-weight: bold;
     font-family: math;
-    font-size: 35px;
+    font-size: 20px;
     color: black;
 }
 
@@ -133,10 +165,9 @@ a {
     display: flex;
     border: 1px solid rgb(221, 217, 217);
     border-radius: 5px;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 5px;
-    margin: 2%;
+    margin-bottom: 2%;
     padding: 2%;
-    width:500px;
+    
     justify-content: space-between; 
     font-weight: bold;
     font-family: math;
@@ -163,25 +194,38 @@ a {
     border-radius: 10px;
     padding: 20px;
     margin-bottom: 25px;
+    margin: 15%
     /* background-color:#A0D6B4; */
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    /* box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px; */
 }
 .menu-header{
     display: flex;
 }
-@media screen and (min-width: 1290px) {
+.cover{
+   margin: 0% 10% 0% 10%;
+  
+}
+ @media screen and (min-width: 1290px) {
     .menu-page {
       display: flex;
       justify-content: space-between;
-      margin-right:5%
+   
+      
+    }
+    .width-cart{
+        width:30%
     }
   
   }
   @media screen and (max-width: 1290px) {
     .menu-page {  
-      margin:5%
+      width: '100%'
     }
-    .cart-style{
+    .width-cart{
+        width:100%;
+        margin-left: 15%;
+    }
+    /* .cart-style{
         margin-left: 15%;
         margin-top: 5%;
     }
@@ -189,5 +233,5 @@ a {
         display: flex;
         flex-direction: column;
         margin-left: 15%;
-    }
-  }
+    } */
+  } 

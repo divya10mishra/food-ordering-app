@@ -5,6 +5,7 @@ import {Link} from 'react-router-dom'
 import {filterData} from '../utils/helper'
 import useOnline from '../utils/useOnline'
 import Header from '../component/Header'
+import banner from '../asset/banner.jpg'
 
 const Body = () => {
   
@@ -21,7 +22,7 @@ const Body = () => {
 
   async function getRestrauntsData() {
     const fetchData = await fetch(
-      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=26.2144806&lng=81.25281389999999&page_type=DESKTOP_WEB_LISTING"
+      "https://web-production-81f2.up.railway.app/https://www.swiggy.com/dapi/restaurants/list/v5?lat=26.2144806&lng=81.25281389999999&page_type=DESKTOP_WEB_LISTING"
     );
     const data = await fetchData.json();
     
@@ -30,28 +31,31 @@ const Body = () => {
   }
   
   const isOnline = useOnline()
- // console.log(isOnline,"online")
+
   if(!isOnline){
-     // console.log("inside online")
-      return (<h1>Offline, Check your internet connection</h1>)
+      return (<h1>Offline, Check your internet connection!</h1>)
   }
  
 
   
   return (
-    <>
-    <Header />
+   <>
+  
+   
+    <div className="cover">
       <div className="search-box">
         <input
-          className="search-input"
+         
           style={{
             borderRadius: "5px",
             padding: "10px",
-            marginLeft: "10px",
+            marginLeft: "5%",
             border: "1px solid grey",
+            width: '80%',
+            marginBottom: '2%'
           }}
           type={"text"}
-          placeholder={"Enter restraunt"}
+          placeholder={"Search for Restraunts and Food"}
           value={searchInput}
           onChange={(e) => setSearchInput(e.target.value)}
         />
@@ -93,6 +97,8 @@ const Body = () => {
           </>
         )}
       </div>
+    </div>
+    
     </>
   );
  

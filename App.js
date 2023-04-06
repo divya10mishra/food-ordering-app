@@ -53,6 +53,7 @@ import Shimmer from "./src/component/Shimmer";
 import userContext from "./src/utils/useContext";
 import { Provider } from "react-redux";
 import store from "./src/utils/store";
+import banner from './src/asset/food.jpg'
 
 const Instamart = lazy(() => import("./src/component/Instamart"));
 const Cart = lazy(() => import("./src/component/Cart"));
@@ -66,8 +67,11 @@ const AppLayout = () => {
   <Provider store={store}>
     <userContext.Provider value={{ user: user1, setUser: setUser1 }}>
       
+    <Header />
+    {/* <img src='https://w0.peakpx.com/wallpaper/760/93/HD-wallpaper-food-still-life-meat-mushroom-spices.jpg' width="100%" height="200px"/> */}
       <Outlet />
       <Footer />
+ 
     </userContext.Provider>
   </Provider>
   )
@@ -109,13 +113,13 @@ const appRouter = createBrowserRouter([
           </Suspense>
         ),
       },
-      // {
-      //     path: '/cart',
-      //     element:
-      //     <Suspense fallback={<Shimmer />}>
-      //     <Cart/>
-      //     </Suspense>
-      // }
+      {
+          path: '/cart',
+          element:
+          <Suspense fallback={<Shimmer />}>
+          <Cart/>
+          </Suspense>
+      }
     ],
   },
 ]);

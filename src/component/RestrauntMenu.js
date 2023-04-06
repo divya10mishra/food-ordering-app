@@ -4,7 +4,7 @@ import { useDispatch } from "react-redux";
 import useRestraunt from "../utils/useRestraunt";
 import Shimmer from "./Shimmer";
 import Cart from "./Cart";
-import {Link} from 'react-router-dom'
+import { useSelector } from "react-redux";
 
 const RestrauntMenu = () => {
   let imageUrl =
@@ -15,6 +15,8 @@ const RestrauntMenu = () => {
   const restrauntInfo = useRestraunt(id);
   const dispatch = useDispatch();
 
+  const cartItem = useSelector((store) => store.cart.items);
+console.log(cartItem,"cartitemm")
   const handleAddItem = (item) => {
     dispatch(addItem(item)); // action is {payload:'stems'}
   };
@@ -27,31 +29,30 @@ const RestrauntMenu = () => {
   return !restrauntInfo ? (
     <Shimmer />
   ) : (
-    <>
-      <div style={{display:'flex' }} className="menu-header">
-        <img src={imageUrl + restrauntInfo?.cloudinaryImageId} />
+    <div style={{marginLeft:'15%', marginRight:'15%'}}>
+      <div style={{display:'flex', borderBottom:'1px solid rgb(221, 217, 217)', justifyContent:'space-between', marginBottom:'2%'}} >
+        {/* <img src={imageUrl + restrauntInfo?.cloudinaryImageId} height="200" style={{borderRadius: '20px', padding:'5px'}}/> */}
         <div
-          style={{ display: "flex", flexDirection: "column", marginLeft: "3%"}}
+          style={{ display: "flex", flexDirection: "column", padding:'5px'}}
         >
-          <span className="menu-label">
+          <span>
             {restrauntInfo?.name}
           </span>
-          <span className="menu-label">
-            Ratings : {restrauntInfo?.avgRating}
-          </span>
-          <span className="menu-label">
+         
+          <span>
             Address: {restrauntInfo?.area},{restrauntInfo?.city}
           </span>
        
        
         </div>
-        <div style={{marginLeft:'15%', fontSize:'25px'}}>
-        <Link to = '/'> ⬅️Back to Home </Link>
-        </div>
+        <span className="menu-rating-label">⭐{restrauntInfo?.avgRating} </span>
+       
       </div>
-      <div className='menu-page'>
-        <div>
-          <ul>
+      <div>
+        🍀Pure Veg
+        <div style={{marginTop:'5%'}}>
+  <span style={{fontWeight:'bold', fontSize:'20px'}}>Recommended({restrauntInfo?.menu?.items?.length})</span>
+         
             {Object.values(restrauntInfo?.menu?.items).map((res) => (
               <div className="menu-item-card" key={res.id}>
                
@@ -67,29 +68,30 @@ const RestrauntMenu = () => {
 
                 <div >
                   <button
-                 
+                    style={{backgroundColor:'white'}}
                     onClick={() => handleAddItem(res)}
                   >
-                    +
+                    ➕
                   </button>
+                  {cartItem?.quantity}
                   <button
                    
-                    style={{ marginLeft: "10px" }}
+                    style={{ marginLeft: "10px", backgroundColor:'white' }}
                     onClick={() => handleRemoveItem(res)}
                   >
-                    -
+                    ➖
                   </button>
                 </div>
 
               </div>
             ))}
-          </ul>
+         
         </div>
-        <div    >
+        {/* <div className="width-cart">
           <Cart />
-        </div>
+        </div> */}
       </div>
-    </>
+    </div>
   );
 };
 
