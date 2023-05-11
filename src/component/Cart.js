@@ -28,7 +28,7 @@ const Cart = () => {
           <Link to="/">
             <button
               className="login-button"
-              style={{ width: "30%", cursor: "pointer" }}
+              style={{ width: "27%", cursor: "pointer" }}
             >
               Search for restraunts
             </button>
