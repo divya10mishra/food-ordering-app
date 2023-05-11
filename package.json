@@ -5,8 +5,8 @@
   "description": "react sessions learning",
   "scripts": {
     "start": "parcel index.html",
-    "predeploy":"npm run build",
-    "deploy":"gh-pages -d dist",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist",
     "build": "parcel build index.html --public-url .",
     "test": "jest"
   },
@@ -25,10 +25,12 @@
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.3",
+    "formik": "^2.2.9",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-redux": "^8.0.5",
-    "react-router-dom": "^6.8.1"
+    "react-router-dom": "^6.8.1",
+    "yup": "^1.1.1"
   },
   "browserList": [
     "last 2 versions"

@@ -53,7 +53,8 @@ import Shimmer from "./src/component/Shimmer";
 import userContext from "./src/utils/useContext";
 import { Provider } from "react-redux";
 import store from "./src/utils/store";
-import banner from './src/asset/food.jpg'
+import banner from './src/asset/food.jpg';
+import SignUp from './src/component/SignUp'
 
 const Instamart = lazy(() => import("./src/component/Instamart"));
 const Cart = lazy(() => import("./src/component/Cart"));
@@ -119,6 +120,10 @@ const appRouter = createBrowserRouter([
           <Suspense fallback={<Shimmer />}>
           <Cart/>
           </Suspense>
+      },
+      {
+        path:'/signUp',
+        element:<SignUp/>
       }
     ],
   },

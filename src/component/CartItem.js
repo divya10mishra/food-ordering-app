@@ -1,6 +1,12 @@
+import { useDispatch } from "react-redux";
+import { clearItem } from "../utils/Slice/Cart";
+
 const CartItem = (props) => {
-    
- 
+  const dispatch = useDispatch();
+
+  const handleClearItem = () => {
+    dispatch(clearItem(props));
+  };
 
   let Itemtotal = () => {
     return (props.quantity / 100) * props.price;
@@ -24,6 +30,14 @@ const CartItem = (props) => {
           style={{ fontSize: "18px", fontWeight: "500", marginLeft: "60%" }}
         >
           Total- {Itemtotal()}
+        </span>
+        <span
+          style={{ marginLeft: "5%", cursor: "pointer" }}
+          onClick={() => {
+            handleClearItem();
+          }}
+        >
+          ❌
         </span>
       </div>
     </>

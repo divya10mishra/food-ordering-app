@@ -4,8 +4,6 @@ import Shimmer from "./Shimmer";
 import {Link} from 'react-router-dom'
 import {filterData} from '../utils/helper'
 import useOnline from '../utils/useOnline'
-import Header from '../component/Header'
-import banner from '../asset/banner.jpg'
 
 const Body = () => {
   
@@ -22,7 +20,8 @@ const Body = () => {
 
   async function getRestrauntsData() {
     const fetchData = await fetch(
-      "https://web-production-81f2.up.railway.app/https://www.swiggy.com/dapi/restaurants/list/v5?lat=26.2144806&lng=81.25281389999999&page_type=DESKTOP_WEB_LISTING"
+      // https://web-production-81f2.up.railway.app/
+      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=26.2144806&lng=81.25281389999999&page_type=DESKTOP_WEB_LISTING"
     );
     const data = await fetchData.json();
     
@@ -35,24 +34,18 @@ const Body = () => {
   if(!isOnline){
       return (<h1>Offline, Check your internet connection!</h1>)
   }
- 
-
   
   return (
    <>
-  
-   
     <div className="cover">
       <div className="search-box">
-        <input
-         
+        <input 
           style={{
             borderRadius: "5px",
             padding: "10px",
-            marginLeft: "5%",
             border: "1px solid grey",
             width: '80%',
-            marginBottom: '2%'
+            margin: '22px'
           }}
           type={"text"}
           placeholder={"Search for Restraunts and Food"}

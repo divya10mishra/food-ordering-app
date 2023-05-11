@@ -2,19 +2,19 @@ const Footer = () => {
   return (
     <div
       style={{
-        backgroundColor: "#708090",
-        color: "white",
+        backgroundColor: "#f5eeed",
+        color: "black",
         padding: "1%",
         fontSize: "20px",
         fontWeight: "900",
         width: "100%",
         display: "flex",
-        position: "fixed",
+         position: "fixed",
         bottom:'0',
         
       }}
     >
-      <p style={{width:'100%'}}>Made with ❤️ in India</p>
+      <p style={{width:'100%', textAlign:'center', fontSize:'15px'}}>Made with ❤️ in India</p>
     </div>
   );
 };

@@ -1,5 +1,4 @@
-import uparrow from '../asset/up-arrow.png'
-import downarrow from '../asset/down-arrow.png'
+
 
 const Accordian = ({ description, title, isVisible, setIsVisible, name }) => {
 
@@ -17,14 +16,10 @@ const Accordian = ({ description, title, isVisible, setIsVisible, name }) => {
           }}
           name={isVisible ? "" : name}
           style={{
-            borderRadius: "5px",
-            padding: "10px",
-            marginLeft: "10px",
-            border: "1px solid grey",
-            height:"50px"
+            height:"30px"
           }}
         >
-          {isVisible ? "Hide" : "Show"}
+          {isVisible ?  "⬆️" : "⬇️"}
         </button>
       </div>
     </>

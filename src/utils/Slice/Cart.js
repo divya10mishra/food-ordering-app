@@ -51,10 +51,18 @@ const Cart = createSlice({
     clearCart: (state) => {
       state.items = [];
     },
+    clearItem :(state, action)=>{
+      let cartz = cartPayload(action.payload)
+      let check = state.items.findIndex(el => el.id === cartz.id)
+      console.log(check,"check")
+      if(state.items[check]?.id){
+        state.items.splice(check,1)
+      }
+    }
   },
 });
 
-export const { addItem, removeItem,clearCart } = Cart.actions
+export const { addItem, removeItem,clearCart, clearItem } = Cart.actions
 
 // it is reducer
 export default Cart.reducer
