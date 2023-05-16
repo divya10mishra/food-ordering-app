@@ -21,7 +21,7 @@ const Body = () => {
   async function getRestrauntsData() {
     const fetchData = await fetch(
       // https://web-production-81f2.up.railway.app/
-      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=26.2144806&lng=81.25281389999999&page_type=DESKTOP_WEB_LISTING"
+      "https://web-production-81f2.up.railway.app/https://www.swiggy.com/dapi/restaurants/list/v5?lat=26.2144806&lng=81.25281389999999&page_type=DESKTOP_WEB_LISTING"
     );
     const data = await fetchData.json();
     
