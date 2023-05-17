@@ -68,6 +68,7 @@ const Body = () => {
         </button>
       </div>
       <div className="restraunt-list">
+      {allRestraunts?.length === undefined ?<span className='undefined-style'>Restraunts are close visit between 9a.m to 11p.m IST </span> : ''}
         {allRestraunts?.length === 0 ? (<>
            <Shimmer />
         

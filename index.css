@@ -293,3 +293,16 @@ a:hover {
   color: slategrey;
   cursor: pointer;
 }
+.undefined-style{
+  font-size: 24px;
+    font-family: math;
+    color: deeppink;
+    background-color: lightgrey;
+    border-radius: 5px;
+    padding: 2%;
+    position: absolute;
+    left:50%;
+    top:50%;
+    transform:translate(-50%,-50%);
+    /* margin: 20%; */
+}
