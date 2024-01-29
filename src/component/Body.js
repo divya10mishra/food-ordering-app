@@ -4,6 +4,7 @@ import Shimmer from "./Shimmer";
 import {Link} from 'react-router-dom'
 import {filterData} from '../utils/helper'
 import useOnline from '../utils/useOnline'
+import { RestrauntCardData } from "../utils/RestrauntCardData";
 
 const Body = () => {
   
@@ -17,16 +18,16 @@ const Body = () => {
   }, []);
 
   
-
+console.log("RestrauntCardData:",RestrauntCardData)
   async function getRestrauntsData() {
-    const fetchData = await fetch(
-      // https://web-production-81f2.up.railway.app/
-      "https://web-production-81f2.up.railway.app/https://www.swiggy.com/dapi/restaurants/list/v5?lat=26.2144806&lng=81.25281389999999&page_type=DESKTOP_WEB_LISTING"
-    );
-    const data = await fetchData.json();
+    // const fetchData = await fetch(
+    //   // https://web-production-81f2.up.railway.app/
+    //   "https://web-production-81f2.up.railway.app/https://www.swiggy.com/dapi/restaurants/list/v5?lat=26.2144806&lng=81.25281389999999&page_type=DESKTOP_WEB_LISTING"
+    // );
+    // const data = await fetchData.json();
     
-    setAllRestraunts(data?.data?.cards[2]?.data?.data?.cards);
-    setFillteredRestraunts(data?.data?.cards[2]?.data?.data?.cards);
+    setAllRestraunts(RestrauntCardData?.data?.cards);
+    setFillteredRestraunts(RestrauntCardData?.data?.cards);
   }
   
   const isOnline = useOnline()
@@ -80,8 +81,8 @@ const Body = () => {
                 
                 
                 <Link
-                  to={"/restraunt/" + restraunt.data.id}
-                  key={restraunt.data.id}
+                  to={"/restraunt/" + restraunt.id}
+                  key={restraunt.id}
                 >
                   <RestrauntCard {...restraunt} key={index} />
                 </Link>

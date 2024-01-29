@@ -5,18 +5,19 @@ const RestrauntCard = (props) => {
   let imageUrl =
     "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/";
   const { user, setUser } = useContext(userContext);
+  console.log("props",props)
   return (
     <>
       <div className="card">
         <img
-          src={imageUrl + props.data.cloudinaryImageId}
+          src={imageUrl + props.imgUrl}
           alt="picture missing!!"
         />
         <div className="remove-link-style" style={{ color: "black" }}>
-          {props.data.name}
+          {props.restrauntName}
         </div>
         <div style={{ fontSize: "12px", color: "grey" }}>
-          {props.data.cuisines.map((item) => (
+          {props.cuisines.map((item) => (
             <>{item},</>
           ))}
         </div>
@@ -28,7 +29,7 @@ const RestrauntCard = (props) => {
             marginTop: "10px",
           }}
         >
-          <div className="card-rating-label">⭐{props.data.avgRating} </div>
+          <div className="card-rating-label">⭐{props.avgRating} </div>
           <div
             style={{
               color: "black",
@@ -38,7 +39,7 @@ const RestrauntCard = (props) => {
             }}
           >
             {" "}
-            {props.data.costForTwoString}
+            {props.cost}
           </div>
         </div>
       </div>
