@@ -1,13 +1,17 @@
-/* @tailwind base;
+@tailwind base;
 @tailwind components;
-@tailwind utilities; */
+@tailwind utilities;
 
 .header {
   display: flex;
   justify-content: space-around;
+  font-family: ProximaNova,arial,Helvetica Neue,sans-serif;
+  color: #3d4152;
+  font-size: 16px;
 
-  border-radius: 10px;
-  padding: 7px;
+  /* border-radius: 10px; */
+  /* border-bottom: 1px solid gray; */
+  box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -4px rgba(0,0,0,0.1);
   margin-bottom: 25px;
 
   position: sticky;
@@ -18,22 +22,34 @@
 }
 
 body {
-  font-family: "Gill Sans", sans-serif;
+  font-family: ProximaNova,arial,Helvetica Neue,sans-serif;
+}
+
+.location-font{
+  padding-top: 10%;
+  font-size: 13px;
+}
+.header-logo{
+  display: flex;
+  /* flex-direction: row; */
 }
 
 .nav-items > ul {
   list-style-type: none;
   display: flex;
-  flex-direction: row;
-  color: #708090;
+
+
 }
 .nav-items > ul > li {
-  padding: 10px;
+  padding-left: 55px;
+  padding-bottom: 20px;
+  font-weight: 500;
+  font-size: 16px;
+  color: #3D4152;
 }
 
 .card {
   background-color: white;
-
   padding: 10px;
   margin: 10px;
   width: 250px;
@@ -122,25 +138,33 @@ body {
   border: 1px solid gray;
 }
 .remove-link-style {
-  font-size: 20px;
-  font-weight: bold;
-  font-family: math;
+  font-size: 16px;
+  font-weight: 500;
+  font-family: ProximaNova,arial,Helvetica Neue,sans-serif;;
   text-decoration: none;
 }
 
-.nav-item {
-  font-weight: bold;
-  font-family: math;
-  font-size: 20px;
-}
+/* .nav-item {
+  font-weight: 500;
+  font-family: ProximaNova,arial,Helvetica Neue,sans-serif;;
+  font-size: 16px;
+} */
 
 a {
   text-decoration: none;
+  color: #3D4152;
+  font-weight:500
+}
+.gray-font-style{
+  font-weight: 500;
+  font-family: ProximaNova,arial,Helvetica Neue,sans-serif;;
+  font-size: 16px;
+  text-decoration: none;
   color: #708090;
 }
-a:hover {
+/* a:hover {
   color: #f5316c;
-}
+} */
 .menu-label {
   font-weight: bold;
   font-family: math;
@@ -305,4 +329,9 @@ a:hover {
     top:50%;
     transform:translate(-50%,-50%);
     /* margin: 20%; */
+}
+
+.product-container{
+  max-width: 80%;
+  min-width: 50%
 }

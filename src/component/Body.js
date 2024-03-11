@@ -1,4 +1,6 @@
 import RestrauntCard from "./RestrauntCard";
+import Category from './Category'
+
 import React, { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
 import {Link} from 'react-router-dom'
@@ -38,6 +40,29 @@ console.log("RestrauntCardData:",RestrauntCardData)
   
   return (
    <>
+   <div className=" flex justify-center ">
+   <Category/>
+   </div>
+
+   <div className=" flex justify-center">
+   <div className="w-4/5 overflow-hidden">
+    <div className="font-Basis_Grotesque_Pro font-extrabold text-2xl">Top Restaurants Chains in Lucknow</div>
+    <div className="flex justify-around">
+   {fillteredRestraunts?.map((restraunt, index) => {
+              return (
+                
+                
+                <Link
+                  to={"/restraunt/" + restraunt.id}
+                  key={restraunt.id}
+                >
+                  <RestrauntCard {...restraunt} key={index} />
+                </Link>
+               
+              );
+            })}</div></div>
+   </div>
+   
     <div className="cover">
       <div className="search-box">
         <input 
