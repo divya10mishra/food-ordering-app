@@ -3,14 +3,15 @@ import userContext from "../utils/useContext";
 
 const RestrauntCard = (props) => {
   let imageUrl =
-    "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/";
+    "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_490,h_290,c_fill/";
   const { user, setUser } = useContext(userContext);
-  console.log("props",props)
+ 
   return (
     <>
-      <div className="card">
+      <div className="card  rounded">
         <img
-          src={imageUrl + props.imgUrl}
+        className="rounded-lg"
+          src={props.imgUrl}
           alt="picture missing!!"
         />
         <div className="remove-link-style" style={{ color: "black" }}>
