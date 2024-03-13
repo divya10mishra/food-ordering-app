@@ -9,7 +9,7 @@ import useOnline from "../utils/useOnline";
 import { RestrauntCardData } from "../utils/RestrauntCardData";
 
 const Body = () => {
-  const [searchInput, setSearchInput] = useState("");
+  
   const [fillteredRestraunts, setFillteredRestraunts] = useState([]);
   const [allRestraunts, setAllRestraunts] = useState([]);
 
@@ -42,9 +42,9 @@ const Body = () => {
         <Category />
       </div>
       <div className=" flex justify-center">
-        <div className="w-4/5 product-container">
+        <div className="w-4/5 product-container border-b border-solid border-gray-300 mb-6 py-6 ">
           <div className="flex justify-between">
-          <div className="font-Basis_Grotesque_Pro font-extrabold text-2xl">
+          <div className="font-Basis_Grotesque_Pro font-extrabold text-2xl ">
             Top Restaurants Chains in Lucknow
           </div>
           <div><Carousel props={box}/></div>
@@ -61,37 +61,11 @@ const Body = () => {
         </div>
       </div>
 
-      <div className="cover">
-        <div className="search-box">
-          <input
-            style={{
-              borderRadius: "5px",
-              padding: "10px",
-              border: "1px solid grey",
-              width: "80%",
-              margin: "22px",
-            }}
-            type={"text"}
-            placeholder={"Search for Restraunts and Food"}
-            value={searchInput}
-            onChange={(e) => setSearchInput(e.target.value)}
-          />
-          <button
-            style={{
-              borderRadius: "5px",
-              padding: "10px",
-              marginLeft: "10px",
-              border: "1px solid grey",
-            }}
-            onClick={() => {
-              const data = filterData(searchInput, allRestraunts);
-              setFillteredRestraunts(data);
-            }}
-          >
-            Search
-          </button>
-        </div>
-        <div className="restraunt-list">
+      <div className="left-margin-body py-6">
+      <div className="font-Basis_Grotesque_Pro font-extrabold text-2xl ">
+      Restaurants with online food delivery in Lucknow
+          </div>
+        <div className="product-container flex-wrap flex mb-6 ">
           {allRestraunts?.length === undefined ? (
             <span className="undefined-style">
               Restraunts are close visit between 9a.m to 11p.m IST{" "}
@@ -107,9 +81,11 @@ const Body = () => {
             <>
               {fillteredRestraunts?.map((restraunt, index) => {
                 return (
+                  <div className="flex justify-between">
                   <Link to={"/restraunt/" + restraunt.id} key={restraunt.id}>
                     <RestrauntCard {...restraunt} key={index} />
                   </Link>
+                  </div>
                 );
               })}
             </>

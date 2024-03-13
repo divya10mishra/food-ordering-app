@@ -5,7 +5,7 @@ const Category = () => {
   let boxRef = useRef(null);
   const box = boxRef.current;
   return (
-    <div className="product-container  border-b border-solid border-gray-300 mb-6 pb-6 scroll-smooth">
+    <div className="w-4/5  border-b border-solid border-gray-300 mb-6 py-8">
       <div className="flex justify-between">
         <div className="font-Basis_Grotesque_Pro font-extrabold text-2xl">
           What's on your mind?
