@@ -19,8 +19,7 @@ const Body = () => {
     getRestrauntsData();
   }, []);
 
-  
-console.log("RestrauntCardData:",RestrauntCardData)
+
   async function getRestrauntsData() {
     // const fetchData = await fetch(
     //   // https://web-production-81f2.up.railway.app/
