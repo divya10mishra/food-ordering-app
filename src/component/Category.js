@@ -13,7 +13,7 @@ const Category = () => {
         <Carousel props={box} />
       </div>
       <div
-        className=" flex justify-around overflow-hidden scroll-smooth"
+        className="flex justify-around overflow-hidden scroll-smooth"
         ref={boxRef}
       >
         {Array(20)
