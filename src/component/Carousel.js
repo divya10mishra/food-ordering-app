@@ -4,7 +4,7 @@ import { FaArrowRight } from "react-icons/fa6";
 
 function Carousel(props) {
     console.log("props carousel", props)
-   let width = props.props.clientWidth / 2;
+   let width = props?.props?.clientWidth / 2;
 
   //make it in one function-refactor
   const buttonPrev = () => {

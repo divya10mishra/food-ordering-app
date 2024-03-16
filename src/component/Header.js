@@ -30,25 +30,25 @@ const Header = () => {
         
        
 
-        <div className="flex align-middle pt-4">
-        
-            <span className="flex">
-                <FaSearch />
-                <Link to="/"> Search</Link>
+        <div className="flex  justify-stretch pt-4 ">
+       
+            <span className="flex align-middle">
+                <FaSearch className="mr-2 mt-1"/>
+                <Link to="/" > Search</Link>
             </span>
             
             {/* <li><Link to = '/about'>Contact</Link></li>
           <li><Link to = '/contact'>About</Link></li>*/}
-            <span className="flex pl-5">
-            <CiDiscount1 />
+            <span className="flex pl-10">
+            <CiDiscount1 className="mr-2 mt-1"/>
               <Link to="/instamart">Offers</Link>
             </span>
-            <span className="flex pl-5">
-            <IoHelpBuoyOutline />
+            <span className="flex pl-10">
+            <IoHelpBuoyOutline className="mr-2 mt-1"/>
               <Link to="">Help</Link>
             </span>
-            <span className="flex pl-5">
-            <MdAssignmentInd />
+            <span className="flex pl-10">
+            <MdAssignmentInd className="mr-2 mt-1"/>
               <a
                 onClick={() => setShowModal(true)}
                 style={{ cursor: "pointer" }}
@@ -57,7 +57,7 @@ const Header = () => {
               </a>
               {showModal && <SignUp close={closeModal} />}
             </span>
-            <span className="pl-5">
+            <span className="pr-10 pl-10">
               {" "}
               <Link to="/cart">
                 {" "}
@@ -67,7 +67,7 @@ const Header = () => {
                 Cart
               </Link>
             </span>
-         
+          
         </div>
 
         {/* {isLoggedIn ? <span onClick={()=>setIsLoggedIn(false)}
