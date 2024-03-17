@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 import { filterData } from "../utils/helper";
 import useOnline from "../utils/useOnline";
 import { RestrauntCardData } from "../utils/RestrauntCardData";
+import TopRestaurants from "./TopRestaurants"
 
 const Body = () => {
   
@@ -38,7 +39,7 @@ const Body = () => {
   
   return (
     <>
-      <div className=" flex justify-center ">
+      {/* <div className=" flex justify-center ">
         <Category />
       </div>
       <div className=" flex justify-center">
@@ -59,7 +60,8 @@ const Body = () => {
             })}
           </div>
         </div>
-      </div>
+      </div> */}
+      <TopRestaurants/>
 
       <div className="left-margin-body py-6">
       <div className="font-Basis_Grotesque_Pro font-extrabold text-2xl ">
